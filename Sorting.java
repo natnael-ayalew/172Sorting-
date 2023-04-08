@@ -56,15 +56,15 @@ public class Sorting {
         //(You can copy b to a and then perform (0.1 * d.length)  many swaps to acheive this.
         int[] b = a.clone();
         Arrays.sort(b);
-        int[] c = new int[a.length];
+        int[] c = new int[b.length];
         Stack<Integer> stack = new Stack<>();
-        for (int i : a) {
+        for (int i : b) {
             stack.add(i);
         }
         for (int i = 0; i < c.length; i++) {
             c[i] = stack.pop();
         }
-        int[] d = a.clone();
+        int[] d = b.clone();
         int numberOfSwaps = (int)((float)(d.length)*0.1);
         for (int k = 0; k < numberOfSwaps; k++) {
             int i = StdRandom.uniform(0, d.length);
